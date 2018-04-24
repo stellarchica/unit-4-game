@@ -3,58 +3,56 @@
 
     <head>
         <title>CrystalsCollector Game</title>
-        <!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <!-- link java
-        link jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" crossorigin="anonymous"></script>
+        <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
     </head>
 
     <body>
-        <div class="container">
-            <div class="header">
-                <h1>CrystalsCollector!</h1>
-            </div>
-
-            <br>
-            <div class="instructions">
-                <p>The game will display a random number.</p>
-                <p>Click on a different crystal to add points to reach the random number displayed.</p>
-                <p>You win the game by matching the random number – <b>without going over</b>. If your number goes over the random number, you lose.</p>
-                <p>The four crystals each have a different value that are hidden from you. The value of the crystals will be reset each game.</p>
-            </div>
-
-            <br>
-            <!-- float left -->
-            <div class="random-number">
-                RANDOM NUMBER BOX
-            </div>
-            <!-- float right -->
-            <div class="wins-loss-box">
-                <p>Wins: </p>
-                <p>Losses: </p>
-            </div>
-
-            <!-- FLOAT LEFT, GO IN A ROW -->
-            <!-- save buttons, re-source thru images folder -->
-            <br>
-            <div class="jewel-boxes">
-                <img id="jewel-one" src="https://openclipart.org/download/26195/Button-Red.svg" height="75px">
-                <img id="jewel-two" src="https://openclipart.org/download/26191/Button-Blue.svg" height="75px">
-                <img id="jewel-three" src="https://openclipart.org/download/26197/Button-Yellow.svg" height="75px">
-                <img id="jewel-four" src="https://openclipart.org/download/26194/Button-Purple.svg" height="75px">
-            </div>
-
-            <br>
-            <div class="total-score">
-                Your total score is:
-            </div>
-
-            <br>
-            <div class="user-number">
-                YOUR NUMBER BOX
-            </div>
         
+        <div class="header">
+            <h1>CrystalsCollector!</h1>
         </div>
+
+        <br>
+        <div class="instructions">
+            <p>The game will display a random number.</p>
+            <p>Click on a different crystal to add points to reach the random number displayed.</p>
+            <p>You win the game by matching the random number – <b>without going over</b>. If your number goes over the random number, you lose.</p>
+            <p>The four crystals each have a different value that are hidden from you. The value of the crystals will be reset each game.</p>
+        </div>
+
+        <br>
+        <!-- float left -->
+        <div class="random-number">
+            RANDOM NUMBER
+        </div>
+        <!-- float right -->
+        <div class="wins-loss-box">
+            <p>Wins: </p>
+            <p>Losses: </p>
+        </div>
+
+        <!-- FLOAT LEFT, GO IN A ROW -->
+        <!-- save buttons, re-source thru images folder -->
+        <br>
+        <div class="jewel-boxes">
+            <img id="jewel-one" src="https://openclipart.org/download/26195/Button-Red.svg" height="75px">
+            <img id="jewel-two" src="https://openclipart.org/download/26191/Button-Blue.svg" height="75px">
+            <img id="jewel-three" src="https://openclipart.org/download/26197/Button-Yellow.svg" height="75px">
+            <img id="jewel-four" src="https://openclipart.org/download/26194/Button-Purple.svg" height="75px">
+        </div>
+
+        <br>
+        <div class="total-number">
+            Your total score is:
+        </div>
+
+        <br>
+        <div class="user-number">
+            YOUR NUMBER
+        </div>
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
     </body>
 
 </html>
