@@ -89,7 +89,7 @@ $(document).on('click', function () {
 
         resetAndStartGame();
     }
-    else if (counter === randomNumber){
+    else if (totalScore === randomNumber){
         win++;
 
         $("#win").html("You win: " + win);
