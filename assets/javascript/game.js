@@ -60,7 +60,7 @@ resetAndStartGame();
 // }
 
 // not defined and error message
-$(".crystals").on('click', "crystalOne", function () {
+$(document).on('click', function () {
     var crystalOne = parseInt($(this).attr('random'));
     totalScore += crystalOne;
     // should display the value per click on the crystals, in console log
