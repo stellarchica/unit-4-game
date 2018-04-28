@@ -1,107 +1,119 @@
-$(document).ready(function(){ 
-    var randomNumber = [Math.floor(Math.random() * 100)];
+// $(document).ready(function(){ 
+    var randomNumber;
+    var win = 0;
+    var lose = 0;
+    var totalScore = 0;
+    // global variables
+    
+    // previously...
+    // for (var i = 0; i < 1; i++){
 
-    $('#randomNumber').text(randomNumber);
+// initalize game
+var resetAndStartGame = function () {
 
-    var jewelOneValue = [Math.floor(Math.random()* 10)];
-    var jewelTwoValue = [Math.floor(Math.random()* 10)];
-    var jewelThreeValue = [Math.floor(Math.random()* 10)];
-    var jewelFourValue = [Math.floor(Math.random()* 10)];
+    randomNumber = Math.floor(Math.random() * 70) + 30;
+    // console.log(randomNumber);
+    // works outside of for loop
 
-    var winsCounter = 0;
-    var lossesCounter = 0;
-    var userNumber = 0;
+    $("#result").html('Number to reach: ' + randomNumber);
 
-    $('#numberWins').text(winsCounter);
-    $('#numberLosses').text(lossesCounter);
+    // should display random number for player to try to reach
+    // works
 
-    function reset(){
-        randomNumber=Math.floor(Math.random()*101+19);
-        console.log(randomNumber)
-        $('#randomNumber').text(randomNumber);
-        jewelOneValue = [Math.floor(Math.random()* 10)];
-        jewelTwoValue = [Math.floor(Math.random()* 10)];
-        jewelThreeValue = [Math.floor(Math.random()* 10)];
-        jewelFourValue = [Math.floor(Math.random()* 10)];
-        userNumber= 0;
-        // create a variable for total number?
-        $('#totalNumber').text(userNumber);
-        }
 
-        // convert into if-then statements?
-    function success(){
-        alert("You won!");
-            wins++; 
-            $('#numberWins').text(winsCounter);
-            reset();
-        }
+    for (var i = 0; i < 4; i++){
+        var random = Math.floor(Math.random() * 11) + 1;
+        // console.log(random);
+        // should this be a different variable? controlling somethin else?
 
-    function failure(){
-        alert ("You lose!");
-            losses++;
-            $('#numberLosses').text(lossesCounter);
-            reset()
-        }
+        // this is where it breaks
+        // var crystals is not valid ...
+        // better way to catch each crystal? better to do individually?
+        var crystals = ['crystalOne',
+            'crystalTwo',
+            'crystalThree',
+            'crystalFour'];
 
-    $('#jewel-one').on ('click', function(){
-        userNumber = userNumber + jewelOneValue;
-        console.log("New userNumber= " + userNumber);
-        $('#finalTotal').text(userNumber); 
-            //sets win/lose conditions
-            if (userNumber == randomNumber){
-            success();
-            }
-            else if ( userNumber > randomNumber){
-            failure();
-            }   
-    })  
-    $('#jewel-two').on ('click', function(){
-        userNumber = userNumber + jewelTwoValue;
-        console.log("New userNumber= " + userNumber);
-        $('#finalTotal').text(userNumber); 
-            if (userNumber == randomNumber){
-            success();
-            }
-            else if ( userNumber > randomNumber){
-            failure();
-            } 
-    })  
-    $('#jewel-three').on ('click', function(){
-        userNumber = userNumber + jewelThreeValue;
-        console.log("New userNumber= " + userNumber);
-        $('#finalTotal').text(userNumber);
-    //sets win/lose conditions
-            if (userNumber == randomNumber){
-            success();
-            }
-            else if ( userNumber > randomNumber){
-            failure();
-            } 
-    })  
-    $('#jewel-four').on ('click', function(){
-        userNumber = userNumber + jewelFourValue;
-        console.log("New userNumber= " + userNumber);
-        $('#finalTotal').text(userNumber); 
+            // crystals.html(random);
+            // console.log(crystals);
+
+        $(".crystalOne").append(crystalOne);
+        // no errors, but undefined?
+
+        $(".crystalTwo").append(crystalTwo);
+
+        $(".crystalThree").append(crystalThree);
+
+        $(".crystalFour").append(crystalFour);
+
+        // $(".crystal#").empty();
+
+    }
+
+    $("#totalScore").html("Your total score is: " + totalScore);
+}
+
+resetAndStartGame();
+
+// var reset = function () {
+
+// }
+
+// not defined and error message
+$(".crystals").on('click', "crystalOne", function () {
+    var crystalOne = parseInt($(this).attr('random'));
+    totalScore += crystalOne;
+    // should display the value per click on the crystals, in console log
+    // changes each time as game resets
+    // repeat for each crystal? should be condensed. lesser coding is better
+    var crystalTwo= parseInt($(this).attr('random'));
+    totalScore += crystalTwo;
+
+    var crystalThree = parseInt($(this).attr('random'));
+    totalScore += crystalThree;
+
+    var crystalFour = parseInt($(this).attr('random'));
+    totalScore += crystalFour;
+
+    $("#totalScore").html("Your total score is: " + totalScore);
+
+    // console.log(totalScore);
+    // not a number
+
+    if (totalScore > randomNumber){
+        lose++;
+
+        $("#lose").html("You lose: " + lose);
+
+        totalScore = 0;
+
+        resetAndStartGame();
+    }
+    else if (counter === randomNumber){
+        win++;
+
+        $("#win").html("You win: " + win);
+
+        totalScore = 0;
+
+        resetAndStartGame();
+
         
-            if (userNumber == randomNumber){
-            success();
-            }
-            else if ( userNumber > randomNumber){
-            failure();
-            }
-    });   
-}); 
+    };
 
-// USE CONSOLE LOG TO MAKE SURE SHIT IS WORKING
+    });
+
+// };
+
+// USE CONSOLE LOG TO MAKE SURE WORKING
 // fix code by comparing to logic
 
-// logic has to select random number for random number and jewel values
 // user clicks on crystal
-    // need to make onclick or as an event
+    // need to make onclick
 // corresponding crystal adds value to user number on click
-    // set random values for each of the crystals
+    // set random values for each of the crystals (can also be ahead of event coding)
         // will need to change per game
-        // cannot be the same number e ery game
+        // cannot be the same number every game
 // user repeats process until one of two events
     // user number either matches random number
         // then winning message is displayed
@@ -113,4 +125,3 @@ $(document).ready(function(){
 // game will reset & change values automatically?
     // bonus points for this, plus if without clicking reload button
     // would have to create as a for loop?
-// research updateDisplay

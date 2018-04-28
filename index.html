@@ -4,11 +4,12 @@
     <head>
         <title>CrystalsCollector Game</title>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" crossorigin="anonymous"></script>
+        <link rel="images" type="images" href="assets/images">
         <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
     </head>
 
     <body>
+    <div id="wrapper">
         
         <div class="header">
             <h1>CrystalsCollector!</h1>
@@ -23,36 +24,39 @@
         </div>
 
         <br>
-        <!-- float left -->
-        <div class="random-number">
-            RANDOM NUMBER
+        <div class="result">
+            Number to reach:
         </div>
-        <!-- float right -->
+        <!-- text needs to be on new line break -->
         <div class="wins-loss-box">
-            <p>Wins: </p>
-            <p>Losses: </p>
+            <p id="wins">Wins:</p>
+            <br><br>
+            <p id="lose">Losses:</p>
         </div>
 
-        <!-- FLOAT LEFT, GO IN A ROW -->
-        <!-- save buttons, re-source thru images folder -->
+        <!-- re-source thru images folder -->
+        <!-- linked images did not work? -->
         <br>
-        <div class="jewel-boxes">
-            <img id="jewel-one" src="https://openclipart.org/download/26195/Button-Red.svg" height="75px">
-            <img id="jewel-two" src="https://openclipart.org/download/26191/Button-Blue.svg" height="75px">
-            <img id="jewel-three" src="https://openclipart.org/download/26197/Button-Yellow.svg" height="75px">
-            <img id="jewel-four" src="https://openclipart.org/download/26194/Button-Purple.svg" height="75px">
+        <div class="crystals">
+            <img id="crystalOne" src="http://beadage.net/wp-content/uploads/2014/09/aventurine-gemstone-crystal-properties-400x400.jpg" height="75px">
+            <img id="crystalTwo" src="http://beadage.net/wp-content/uploads/2015/04/calcite-crystal-gemstone-properties-400x400.jpg" height="75px">
+            <img id="crystalThree" src="http://beadage.net/wp-content/uploads/2015/08/blue-zircon-crystal-gemstone-400x400.jpg" height="75px">
+            <img id="crystalFour" src="http://beadage.net/wp-content/uploads/2014/09/onyx-crystal-healing-properties-400x400.jpg" height="75px">
         </div>
 
         <br>
-        <div class="total-number">
-            Your total score is:
+        <div class="total-score">
+            <b>Your total score is:</b>
         </div>
 
         <br>
         <div class="user-number">
-            YOUR NUMBER
+            <!-- <span id="userScore">0</span> -->
         </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
         <script type="text/javascript" src="assets/javascript/game.js"></script>
+    </div>
     </body>
 
 </html>
